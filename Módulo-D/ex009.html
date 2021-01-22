@@ -1,0 +1,31 @@
+<!-- DESAFIO: Fazer o exercicio 9 (ex009.js) na forma de página Web-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Verifique se você é estrangeiro.</h1>
+    Qual o seu país ? <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="resposta"></div>
+    <script>
+        function verificar(){
+            var txtpais= document.querySelector('input#txtpais')
+            var resposta = document.querySelector('div#resposta')
+            var país = String(txtpais.value)
+
+            resposta.innerHTML = `<p>Vivendo em ${país} </p>`
+
+            if (país != 'Brasil'){
+                resposta.innerHTML += '<p>Você é estrangeiro!</p>'
+            }
+            else{
+                resposta.innerHTML += '<p>Você é brasileiro!</p>'
+            }
+        }
+    </script>
+</body>
+</html>
